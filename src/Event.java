@@ -4,7 +4,7 @@ public class Event {
     private String date;
     private String location;
     private int maxNumberOfSeats =100;
-    private int availableSeats=0;
+    private int availableSeats=10;
     private double price;
 
     public String getName() {
@@ -43,4 +43,30 @@ public class Event {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
+     public Event ( String name, double price) {
+        this.name = name;
+        this.price = price;
+     }
+     public Event ( String name, double price, String date) {
+
+        this.name = name;
+        this.price = price;
+        this.date = date;
+     }
+     public Event ( String name,double price, String date, String location) {
+        this.name = name;
+        this.price = price;
+        this.date = date;
+        this.location = location;
+     }
+
+     public String toString() {
+        return name + " " + price + "PLN";
+     }
+
+     public void reserveSeat() {
+        --availableSeats;
+     }
 }
